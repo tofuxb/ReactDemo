@@ -7,7 +7,7 @@ import * as AppActions from 'actions'
 class App extends Component {
   render () {
     return (
-      <div className="app"></div>
+      <div className="app" />
     )
   }
 }

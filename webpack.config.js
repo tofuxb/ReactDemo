@@ -4,7 +4,7 @@ const path    = require('path');
 const srcPath  = path.join(__dirname, './src');
 const destPath = path.join(__dirname, './dist');
 
-module.exports = function (env) {
+module.exports = function pack (env) {
   const nodeEnv = env && env.prod ? 'production' : 'development';
   const isProd = nodeEnv === 'production';
 
@@ -28,16 +28,16 @@ module.exports = function (env) {
       }),
       new webpack.optimize.UglifyJsPlugin({
         compress: {
-          warnings:     false,
-          screw_ie8:    true,
+          warnings: false,
+          screw_ie8: true,
           conditionals: true,
-          unused:       true,
-          comparisons:  true,
-          sequences:    true,
-          dead_code:    true,
-          evaluate:     true,
-          if_return:    true,
-          join_vars:    true
+          unused: true,
+          comparisons: true,
+          sequences: true,
+          dead_code: true,
+          evaluate: true,
+          if_return: true,
+          join_vars: true
         },
         output: {
           comments: false
@@ -86,7 +86,7 @@ module.exports = function (env) {
           exclude: /node_modules/,
           use: [
             'babel-loader'
-          ],
+          ]
         }
       ]
     },
@@ -130,7 +130,7 @@ module.exports = function (env) {
         version: false,
         warnings: true,
         colors: {
-          green: '\u001b[32m',
+          green: '\u001b[32m'
         }
       }
     }
